@@ -21,7 +21,7 @@ const changeHandler = ({target}) => {
   setNewCard({...newCard, [target.id]: target.value})
 }
 
-console.log(newCard)
+
 if(deckData.id) {
     return (
 <div>

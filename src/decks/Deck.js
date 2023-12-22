@@ -24,6 +24,10 @@ useEffect(() => {
     loadDeck()
 },[deckId, setDeckData]) 
 
+useEffect(() => {
+   console.log(newCard)
+},[newCard])
+
 const deleteCardHandler= (cardId) => {
   if (window.confirm("Delete this card?\n\nYou will not be able to recover it")) {
     deleteCard(cardId)
