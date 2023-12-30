@@ -5,7 +5,8 @@ function DeckView({deckData, deckId, deleteDeckHandler, deleteCardHandler}) {
     const {url} = useRouteMatch()
 
     const deckCards = deckData.cards
-    
+
+//console.log("loading deck view", deckData)
 if(deckData.id) {
     return (
 <div>
@@ -159,7 +160,7 @@ if(deckData.id) {
     </div>
     )
 }
-return "Page Loading"
+return "Loading Deck View"
     
     }
 

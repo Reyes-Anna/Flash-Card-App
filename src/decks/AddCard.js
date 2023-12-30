@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import CardForm from "./CardForm";
 import { createCard } from "../utils/api";
 
@@ -14,10 +14,11 @@ async function submitHandler(event) {
   event.preventDefault()
   await createCard( deckId, newCard)
   setNewCard(initalCardFormState)
-  history.push(`/decks/${deckId}`)
+  history.goBack()
 }
 
 const changeHandler = ({target}) => {
+  console.log(deckData, newCard)
   setNewCard({...newCard, [target.id]: target.value})
 }
 

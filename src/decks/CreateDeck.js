@@ -8,7 +8,7 @@ const history = useHistory()
   
   const submitHandler = async (event) => {
     event.preventDefault();
-    createDeck(newDeck)
+    await createDeck(newDeck)
     history.push("/")
 
   };

@@ -21,21 +21,24 @@ useEffect(() => {
     async function loadDeck() {
         await readDeck(deckId).then((updateDeck) => setDeckData(updateDeck))
     }
-    loadDeck()
+    setTimeout(() => {
+        loadDeck()
+    }, 300);
 },[deckId, setDeckData]) 
 
-useEffect(() => {
+/*useEffect(() => {
    console.log(newCard)
-},[newCard])
+},[newCard])*/
 
-const deleteCardHandler= (cardId) => {
+async function deleteCardHandler (cardId)  {
   if (window.confirm("Delete this card?\n\nYou will not be able to recover it")) {
-    deleteCard(cardId)
-    setDeckData((deckData) => 
-    deckData.cards.filter((card)=> card.id !== cardId))
+    await deleteCard(cardId)
+    /*setDeckData((deckData) => 
+        deckData.cards.filter((card)=> card.id !== cardId))
+  }*/
+    setDeckData({...deckData, cards: deckData.cards.filter((card)=> card.id !== cardId)})
+    }
 }
-}
-
 
 
 
